@@ -86,7 +86,7 @@ var bolas = [];
 var quantBolas = 99;
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(screen.width - 80, screen.height - 250);
     smooth();
     b1 = new Bola();
     b1.infectada = true;
@@ -118,6 +118,16 @@ function contarRecup() {
 var ant = null;
 var t = 1;
 
+function tresdigitos(numero){
+    if(numero<10){
+        return "00"+numero;
+    }else if(numero < 100){
+        return "0"+numero;
+    }else{
+        return numero;
+    }
+}
+
 function draw() {
     background(255);
 
@@ -133,10 +143,18 @@ function draw() {
     contarInfec();
     contarRecup();
     fill('red');
-    text('INFECTADOS: ' + infec, 115, 10);
-    text('RECUPERADOS: ' + recup, 115, 25);
-    text('FRAME: ' + t, 10, 25);
-    text('INDIVIDUOS: ' + (quantBolas + 1), 10, 10);
+    let ind = document.querySelector(".ind");
+    ind.innerHTML = "INDIVIDUOS: "+tresdigitos(quantBolas+1);
+    let inf = document.querySelector(".inf");
+    inf.textContent = "INFECTADOS: "+tresdigitos(infec);
+    let rec = document.querySelector(".rec");
+    rec.textContent = "RECUPERADOS: "+tresdigitos(infec);
     noFill();
     t += 1;
 }
+
+window.addEventListener("resize",() => {
+    let canvas = document.querySelector("canvas");
+    canvas.width = screen.width - 50;
+    canvas.height = screen.height - 250;
+})

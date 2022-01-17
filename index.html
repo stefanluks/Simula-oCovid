@@ -1,16 +1,78 @@
 <html lang="pt-br">
-
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
-    <title>COVID</title>
+    <title>SIMULA-COVID</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .desenho{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h2,p{
+            width: 100%;
+            text-align: center;
+        }
+        canvas{
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        .info{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .ind,.inf,.rec{
+            padding: 5px;
+            width: max-content;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 0px 10px;
+        }
+        .ind{
+            background-color: blue;
+            color: white;
+        }
+        .inf{
+            background-color: orange;
+            color: black;
+        }
+        .rec{
+            background-color: pink;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <div id="desenho">
-        <h2>Simulação do contágio pelo COVID-19
-        <br> STEFAN - NATANNA - DOUGLAS - HERCULES</h2>
+        <h2>Simulação do contágio pelo COVID-19</h2>
+        <p>STEFAN - NATANNA - DOUGLAS - HERCULES</p>
+        <div class="info">
+            <span class="ind">
+                INDIVIDUOS: 000
+            </span>
+            <span class="inf">
+                INDIVIDUOS: 000
+            </span>
+            <span class="rec">
+                INDIVIDUOS: 000
+            </span>
+        </div>
         <script src="covid.js"></script>
     </div>
 </body>
